@@ -29,7 +29,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                 </Link>
 
                 {sidebarLinks.map((item) => {
-                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}`);
+                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
 
                     return (
                         <Link
@@ -38,9 +38,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                             className={cn(
                                 'sidebar-link', {
                                 'bg-bank-gradient': isActive
-                            }
-
-                            )}
+                            })}
                         >
                             <div className='relative size-6'>
                                 <Image
@@ -54,8 +52,8 @@ const Sidebar = ({ user }: SiderbarProps) => {
                             </div>
                             <p className={cn(
                                 'sidebar-label', {
-                                    '!text-white' : isActive
-                                }
+                                '!text-white': isActive
+                            }
                             )}>
                                 {item.label}
                             </p>
